@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+header {
+    background: #0077b6;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 26px;
+    position: relative;
+}
+
+#toggle-mode {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: #ffffff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+nav {
+    text-align: center;
+    padding: 10px;
+    background: #0096c7;
+}
+
+#search {
+    padding: 10px;
+    width: 50%;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+section {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: #caf0f8;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+li:hover {
+    background: #90e0ef;
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    background: #0077b6;
+    color: white;
+    padding: 15px;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+.dark-mode section {
+    background: #444;
+}
+
+.dark-mode li {
+    background: #555;
+}
+
+.dark-mode li:hover {
+    background: #777;
+}

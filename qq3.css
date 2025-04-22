@@ -1,0 +1,176 @@
+body {
+  background-image: url('qq added.jpg');
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; 
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background-image {
+  width: 70vw;
+  height: 70vh;
+  object-fit: cover; 
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+  max-width: 1000px;
+  width: 90%;
+  animation: fadeIn 1s ease-in-out;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.column {
+  border: none;
+  padding: 20px;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.column:hover {
+  transform: scale(1.02);
+}
+
+.column h3 {
+  margin: 0 0 15px;
+  font-size: 1.5em;
+  color: #0074cc;
+  border-bottom: 3px solid #0074cc;
+  padding-bottom: 8px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.item {
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.colorful:nth-child(1) { background: linear-gradient(to right, #ff9a9e, #fad0c4); }
+.colorful:nth-child(2) { background: linear-gradient(to right, #a18cd1, #fbc2eb); }
+.colorful:nth-child(3) { background: linear-gradient(to right, #fbc2eb, #a6c1ee); }
+.colorful:nth-child(4) { background: linear-gradient(to right, #a1c4fd, #c2e9fb); }
+.colorful:nth-child(5) { background: linear-gradient(to right, #d4fc79, #96e6a1); }
+.colorful:nth-child(6) { background: linear-gradient(to right, #ffecd2, #fcb69f); }
+.colorful:nth-child(7) { background: linear-gradient(to right, #ffdde1, #ee9ca7); }
+.colorful:nth-child(8) { background: linear-gradient(to right, #d299c2, #fef9d7); }
+.colorful:nth-child(9) { background: linear-gradient(to right, #84fab0, #8fd3f4); }
+.colorful:nth-child(10) { background: linear-gradient(to right, #a6c0fe, #f68084); }
+
+.item:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.item.selected {
+  background: linear-gradient(to right, #0077b6, #64b5f6);
+  color: white;
+  font-weight: bold;
+  transform: scale(1.08);
+}
+
+#result {
+  margin-top: 130px;
+  font-weight: 700;
+  font-size: 1.4em;
+  color: #0c5460;
+  text-align: bottom;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.bottom-section {
+  margin-top: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.next-button {
+  background: linear-gradient(135deg, #00b4db, #0083b0);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 132, 255, 0.3);
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.next-button:hover {
+  background: linear-gradient(135deg, #0096c7, #005f73);
+  transform: scale(1.05);
+}
+
+.next-button i {
+  font-style: normal;
+  transition: transform 0.3s ease;
+}
+
+.next-button:hover i {
+  transform: translateX(5px);
+}
+
+#result {
+  font-weight: 700;
+  font-size: 1.4em;
+  color: #0c5460;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.8s ease-in-out;
+}
+

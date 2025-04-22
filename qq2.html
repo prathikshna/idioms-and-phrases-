@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idioms and Phrases</title>
+    <link rel="stylesheet" href="qq2.css">
+    <script src="qq2.js" defer></script>
+    <style>
+        /* Add basic styling for the meaning display */
+        .meaning {
+            display: none;
+            margin-top: 10px;
+            font-style: italic;
+            color: #555;
+        }
+        .category {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Idioms and Phrases</h1>
+    <button id="toggle-mode">🌙 Toggle Dark Mode</button>
+</header>
+
+<nav>
+    <input type="text" id="search" placeholder="Search an idiom" onkeyup="searchIdioms()">
+</nav>
+
+<section id="idioms-list">
+    <h2>Common Idioms and Phrases</h2>
+    
+    <div class="category">
+        <h3>Dealing with Challenges</h3>
+        <ul>
+            <li class="idiom" data-meaning="To endure a painful experience bravely.">
+                <strong>Bite the bullet</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To act quickly without thinking.">
+                <strong>Jump the gun</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To be caught in a difficult situation.">
+                <strong>In hot water</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To make a decision and stick to it.">
+                <strong>Take the bull by the horns</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To try to understand something that’s difficult to grasp.">
+                <strong>Get your head around</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="I’ve been trying to download the file all day and I keep getting an error message – I’m at my wits’ end.">
+                <strong>At your wits’ end</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="Of course there are a number of things that the country needs to improve, but the crux of the matter is that the politicians are corrupt.">
+                <strong>The crux of the matter</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="he police are grasping at straws because there’s virtually no evidence at the crime scene.">
+                <strong>Grasping at straws</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="Harry has been unemployed for the past three years – he’s really in dire straits.">
+                <strong>In dire straits</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="If we can’t stay with any of our friends in London, then we can always book a hotel as a last resort.">
+                <strong>Last resort</strong>
+                <span class="meaning"></span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="category">
+        <h3>Time and Effort</h3>
+        <ul>
+            <li class="idiom" data-meaning="To work late into the night.">
+                <strong>Burn the midnight oil</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To overwork yourself.">
+                <strong>Burn the candle at both ends</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="Put in extra effort to achieve something.">
+                <strong>Go the extra mile</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To study hard.">
+                <strong>Hit the books</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To finish something.">
+                <strong>Call it a day</strong>
+                <span class="meaning"></span>
+            </li>
+		    <li class="idiom" data-meaning=" To succeed in something before running out of time.">
+                <strong>Beat the clock</strong>
+                <span class="meaning"></span>
+            </li>
+		    <li class="idiom" data-meaning="To recount, re-create, or return to the past.">
+                <strong> Turn back the hands of time</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="To engage in a rather aimless or idle activity with the goal of making time pass more quickly.">
+                <strong>Kill time</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="To have the luxury of not having to worry about how long something will take.">
+                <strong> Time is on my side</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="The truth or answer will be determined in the future and is not knowable yet.">
+                <strong>Only time will tell</strong>
+                <span class="meaning"></span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="category">
+        <h3>Truth and Honesty</h3>
+        <ul>
+            <li class="idiom" data-meaning="To tell the truth, even though it may hurt.">
+                <strong>Speak the truth</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To express an opinion openly.">
+                <strong>Speak your mind</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To deceive someone.">
+                <strong>Lead someone up the garden path</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To act recklessly.">
+                <strong>Throw caution to the wind</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To act quickly without thinking.">
+                <strong>Jump the gun</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="to talk about something openly and frankly, particularly something that is unpleasant to hear">
+                <strong>to lay it on the line</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="to believe what someone says without needing further proof">
+                <strong>to take one's word for it</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="an assumption based on trust given to a person or thing, even though one is not entirely sure">
+                <strong>benefit of the doubt</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="to not think carefully before saying something or reacting to a situation">
+                <strong>to shoot from the hip</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="to not hesitate to do or say what one truly wants">
+                <strong>to make no bones about something</strong>
+                <span class="meaning"></span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="category">
+        <h3>Relationships and Social Interactions</h3>
+        <ul>
+            <li class="idiom" data-meaning="To initiate conversation in a social setting.">
+                <strong>Break the ice</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To reveal a secret.">
+                <strong>Spill the beans</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To accidentally reveal a secret.">
+                <strong>Let the cat out of the bag</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To joke or tease someone.">
+                <strong>Pull someone's leg</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="Staying loyal no matter what.">
+                <strong>Through thick and thin</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="To quickly become good friends with someone.">
+                <strong>Hit it Off</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning=" To start a conversation in a social setting.">
+                <strong>Break the Ice</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="To agree with someone.">
+                <strong>See Eye to Eye</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="To share the cost of something, usually a meal">
+                <strong>Go Dutch</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning=" To do everything possible to help someone.">
+                <strong>Bend Over Backwards</strong>
+                <span class="meaning"></span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="category">
+        <h3>Work and Productivity</h3>
+        <ul>
+            <li class="idiom" data-meaning="To go to bed.">
+                <strong>Hit the sack</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To destroy relationships beyond repair.">
+                <strong>Burn bridges</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To adopt a popular trend.">
+                <strong>Jump on the bandwagon</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To give up.">
+                <strong>Throw in the towel</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To destroy relationships beyond repair.">
+                <strong>Burn bridges</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="If something needs blood, sweat, and tears then it is a hard thing to do and requires a lot of effort">
+                <strong>Blood, sweat, and tears</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="To work too hard as well as trying to do other things.">
+                <strong>Burning a candle at both ends</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="To do more than what is expected to make something happen, or help someone">
+                <strong>Go the extra mile</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="To focus and work diligently on a task or problem">
+                <strong>Knuckle/buckle down</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="To do something as much as possible because you were not able to do it before. To catch up.">
+                <strong>Make up for lost time</strong>
+                <span class="meaning"></span>
+            </li>
+			
+			
+        </ul>
+    </div>
+
+    <div class="category">
+        <h3>Mistakes and Regret</h3>
+        <ul>
+            <li class="idiom" data-meaning="To regret something that can't be undone.">
+                <strong>Don't cry over spilled milk</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To feel nervous before a big event.">
+                <strong>Cold feet</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To make a decision in a hurry without thinking it through.">
+                <strong>Rush to judgment</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To make a mountain out of a molehill.">
+                <strong>Make a mountain out of a molehill</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="Expressing a desire to change a past action or decision.
+">
+                <strong>I Wish I Hadn’t Done That</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="Expressing a longing to undo past mistakes or choices.">
+                <strong>If Only I Could Go Back in Time</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="Acknowledging responsibility and expressing remorse ">
+                <strong>I Regret My Actions</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="Offering a direct apology for past actions or choices">
+                <strong>I’m Sorry for What I Did</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="If you back or bet on the wrong horse, for example the loser in a contest, match or election, you support the wrong person.">
+                <strong>back the wrong horse</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="Acknowledging that you were aware of the consequences but still made a wrong choice">
+                <strong>I Should Have Known Better</strong>
+                <span class="meaning"></span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Success and Failure -->
+    <div class="category">
+        <h3>Success and Failure</h3>
+        <ul>
+            <li class="idiom" data-meaning="Something that happens very rarely.">
+                <strong>Once in a blue moon</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="A good thing that seemed bad at first.">
+                <strong>A blessing in disguise</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To be extremely happy.">
+                <strong>Over the moon</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To succeed despite difficulty.">
+                <strong>Pull off</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="Make a lot of progress">
+                <strong>To come a long way </strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="Have great or unexpected success, especially in making a lot of money quickly; to find exactly what you desired">
+                <strong>To hit the jackpot </strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="Solve two problems with one action or solution">
+                <strong>o kill two birds with one stone</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="To be as good as expected or hoped for">
+                <strong>o live up to your expectations</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="Achieve success after retirement or failure.">
+                <strong>To make a comeback</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="To be among the options to continue; avoid elimination">
+                <strong>To make the cut</strong>
+                <span class="meaning"></span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="category">
+        <h3>Emotions and Feelings</h3>
+        <ul>
+            <li class="idiom" data-meaning="To be confused or not understand something.">
+                <strong>In the dark</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To be feeling nervous.">
+                <strong>Butterflies in your stomach</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="Feeling sad or depressed">
+                <strong>Down in the dumps</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="Feeling nervous or anxious, often about something upcoming">
+                <strong>On pins and needles</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="Feeling nervous or anxious, especially in the stomach">
+                <strong>Butterflies in my stomach</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="Feeling sad or depressed">
+                <strong>In the dumps</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="To die">
+                <strong>Kick the bucket</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="Extremely happy or euphoric">
+                <strong>On cloud nine</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="To become extremely angry or upset">
+                <strong>Hit the ceiling</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="Extremely happy or delighted">
+                <strong>Over the moon</strong>
+                <span class="meaning"></span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="category">
+        <h3>Behavior and Action</h3>
+        <ul>
+            <li class="idiom" data-meaning="To stay calm in a difficult situation.">
+                <strong>Keep a cool head</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To manage to succeed against the odds.">
+                <strong>Pull off</strong>
+                <span class="meaning"></span>
+            </li>
+            <li class="idiom" data-meaning="To live comfortably.">
+                <strong>Live in the lap of luxury</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="If you do something intentionally, but pretend it was an accident, you do it accidentally on purpose.">
+                <strong>accidentally on purpose</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="If you add fuel to the flames, you do or say something that makes a difficult or unpleasant situation even worse.">
+                <strong>add fuel to the flames</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="If you add insult to injury, you do or say something that makes a bad or disappointing situation even worse, or that further hurts the feelings of someone who has already been hurt">
+                <strong>add insult to injury</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="When you try to satisfy two or more people or groups who have different needs, and keep everyone happy, you perform a balancing act">
+                <strong>balancing act</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="If you bare you soul (or heart) to someone, you reveal your innermost thoughts and feelings to them">
+                <strong>bare your heart / soul</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="A person who is barking up the wrong tree is doing the wrong thing, because their beliefs or ideas are incorrect or mistaken">
+                <strong>bark up wrong tree</strong>
+                <span class="meaning"></span>
+            </li>
+			<li class="idiom" data-meaning="If you beat yourself up, you blame yourself or worry unnecessarily about something you did, or some failure or mistake">
+                <strong>beat yourself up</strong>
+                <span class="meaning"></span>
+            </li>
+        </ul>
+    </div>
+
+</section>
+
+<footer>
+    <p>&copy; 2025 Idioms and Phrases | Interactive Learning</p>
+</footer>
+
+<script>
+    const idioms = document.querySelectorAll('.idiom');
+
+    idioms.forEach(idiom => {
+        idiom.addEventListener('click', () => {
+            const meaningElement = idiom.querySelector('.meaning');
+            meaningElement.textContent = idiom.getAttribute('data-meaning');
+            meaningElement.style.display = meaningElement.style.display === 'none' || meaningElement.style.display === '' ? 'block' : 'none';
+        });
+    });
+
+    function searchIdioms() {
+        const searchTerm = document.getElementById('search').value.toLowerCase();
+        const idiomItems = document.querySelectorAll('.idiom');
+
+        idiomItems.forEach(idiom => {
+            const idiomText = idiom.textContent.toLowerCase();
+            idiom.style.display = idiomText.includes(searchTerm) ? 'list-item' : 'none';
+        });
+    }
+</script>
+<footer>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stylish Next Button</title>
+  <style>
+    .next-button {
+      background: linear-gradient(135deg, #00b4db, #0083b0);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0, 132, 255, 0.3);
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      letter-spacing: 1px;
+    }
+
+    .next-button:hover {
+      background: linear-gradient(135deg, #0096c7, #005f73);
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 132, 255, 0.5);
+    }
+
+    .next-button:active {
+      transform: scale(0.97);
+    }
+
+    .next-button i {
+      font-style: normal;
+      transition: transform 0.3s ease;
+    }
+
+    .next-button:hover i {
+      transform: translateX(5px);
+    }
+  </style>
+</head>
+<body>
+
+  <button class="next-button"><a href="D:\ADP CODING\HTML\qq3.html">NEXT PAGE </a>
+  <i>&rarr;</i>
+  </button>
+
+</body>
+</html>
+
+</footer>
+
+<script>
+    // Function to redirect to another page
+    function goToNextPage() {
+        window.location.href ="D:\ADP CODING\HTML\qq3.html";
+    }
+</script>
+
+</body>
+</html>

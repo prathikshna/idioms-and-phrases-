@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idioms Fill in the Blanks</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #f8f9fa, #e0eafc);
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #0077cc;
+    }
+    .question {
+      margin: 20px 0;
+    }
+    .question p {
+      font-weight: 500;
+    }
+    input[type="text"] {
+      padding: 8px;
+      width: 60%;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      margin-top: 8px;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 20px;
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background-color: #f1f1f1;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Idioms </h1>
+	<h2><center>Fill in the Blanks</center><h2>
+
+    <form id="idiomsForm">
+      <div class="question">
+        <p>1. After losing all his money in gambling, Tom is <input type="text" name="q1">.</p>
+      </div>
+      <div class="question">
+        <p>2. The manager had to <input type="text" name="q2"> and fire two employees.</p>
+      </div>
+      <div class="question">
+        <p>3. I kept messing up the recipe, so I just <input type="text" name="q3"> and ordered pizza.</p>
+      </div>
+      <div class="question">
+        <p>4. Lisa always <input type="text" name="q4"> when she's anxious about exams.</p>
+      </div>
+      <div class="question">
+        <p>5. He <input type="text" name="q5"> by investing in that failing company.</p>
+      </div>
+
+      <button type="button" onclick="checkAnswers()">Submit Answers</button>
+    </form>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    const answers = {
+      q1: "in dire straits",
+      q2: "take the bull by the horns",
+      q3: "threw in the towel",
+      q4: "gets butterflies in her stomach",
+      q5: "backed the wrong horse"
+    };
+
+    function normalize(text) {
+      return text.trim().toLowerCase();
+    }
+
+    function checkAnswers() {
+      const form = document.getElementById('idiomsForm');
+      let score = 0;
+      let total = Object.keys(answers).length;
+
+      for (let key in answers) {
+        const userAnswer = normalize(form[key].value);
+        const correctAnswer = normalize(answers[key]);
+        if (userAnswer === correctAnswer) {
+          score++;
+        }
+      }
+
+      const result = document.getElementById('result');
+      result.innerHTML = `You scored ${score} out of ${total}.`;
+      result.style.backgroundColor = score === total ? '#d4edda' : '#fff3cd';
+    }
+  </script>
+</body>
+</html>

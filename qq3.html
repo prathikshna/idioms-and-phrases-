@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="qq3.css" />
+
+
+  <title>Match the Idioms</title>
+</head>
+<body>
+  <div class="container">
+  
+    <div class="column" id="column1">
+      <h3>Idioms</h3>
+      <div class="item colorful" data-match="bite the bullet">Bite the bullet</div>
+      <div class="item colorful" data-match="jump the gun">Jump the gun</div>
+      <div class="item colorful" data-match="in hot water">In hot water</div>
+      <div class="item colorful" data-match="burn the midnight oil">Burn the midnight oil</div>
+      <div class="item colorful" data-match="spill the beans">Spill the beans</div>
+      <div class="item colorful" data-match="let the cat out of the bag">Let the cat out of the bag</div>
+      <div class="item colorful" data-match="once in a blue moon">Once in a blue moon</div>
+      <div class="item colorful" data-match="the ball is in your court">The ball is in your court</div>
+      <div class="item colorful" data-match="cost an arm and a leg">Cost an arm and a leg</div>
+      <div class="item colorful" data-match="burn the midnight oil">Hit the nail on the head</div>
+    </div>
+
+    <div class="column" id="column2">
+      <h3>Meanings</h3>
+      <div class="item colorful" data-match="in hot water">To be caught in a difficult situation.</div>
+      <div class="item colorful" data-match="spill the beans">To reveal a secret.</div>
+      <div class="item colorful" data-match="bite the bullet">To endure a painful experience bravely.</div>
+      <div class="item colorful" data-match="hit the nail on the head">To work late into the night.</div>
+      <div class="item colorful" data-match="jump the gun">To act too early or prematurely.</div>
+      <div class="item colorful" data-match="let the cat out of the bag">To accidentally reveal a secret.</div>
+      <div class="item colorful" data-match="the ball is in your court">Something that happens very rarely.</div>
+      <div class="item colorful" data-match=" once in a blue moon">It is your decision or responsibility now.</div>
+      <div class="item colorful" data-match="cost an arm and a leg">Very expensive or costly.</div>
+      <div class="item colorful" data-match=" burn the midnight oil">To describe exactly what is causing a situation or problem.</div>
+    </div>
+  </div>
+<footer>
+  <div id="result"></div>
+</footer>
+  <script>
+    const items = document.querySelectorAll('.item');
+    let selectedItemA = null;
+    let selectedItemB = null;
+
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        if (item.parentElement.id === 'column1') {
+          if (selectedItemA) selectedItemA.classList.remove('selected');
+          selectedItemA = item;
+          selectedItemA.classList.add('selected');
+        } else {
+          if (selectedItemB) selectedItemB.classList.remove('selected');
+          selectedItemB = item;
+          selectedItemB.classList.add('selected');
+        }
+
+        if (selectedItemA && selectedItemB) checkMatch();
+      });
+    });
+
+    function checkMatch() {
+      if (selectedItemA.dataset.match === selectedItemB.dataset.match) {
+        document.getElementById('result').textContent = '✅ Correct Match!';
+        selectedItemA.style.backgroundColor = 'lightgreen';
+        selectedItemB.style.backgroundColor = 'lightgreen';
+      } else {
+        document.getElementById('result').textContent = '❌ Incorrect Match!';
+        selectedItemA.style.backgroundColor = 'lightcoral';
+        selectedItemB.style.backgroundColor = 'lightcoral';
+      }
+
+      selectedItemA.classList.remove('selected');
+      selectedItemB.classList.remove('selected');
+
+      selectedItemA = null;
+      selectedItemB = null;
+
+      setTimeout(() => {
+        document.getElementById('result').textContent = '';
+      }, 1500);
+    }
+  </script>
+  <footer>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stylish Next Button</title>
+  <style>
+    .next-button {
+      background: linear-gradient(135deg, #00b4db, #0083b0);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0, 132, 255, 0.3);
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      letter-spacing: 1px;
+    }
+
+    .next-button:hover {
+      background: linear-gradient(135deg, #0096c7, #005f73);
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 132, 255, 0.5);
+    }
+
+    .next-button:active {
+      transform: scale(0.97);
+    }
+
+    .next-button i {
+      font-style: normal;
+      transition: transform 0.3s ease;
+    }
+
+    .next-button:hover i {
+      transform: translateX(5px);
+    }
+  </style>
+</head>
+<body>
+
+  <button class="next-button"><a href="D:\ADP CODING\HTML\new qq3.html">NEXT PAGE </a>
+  <i>&rarr;</i>
+  </button>
+
+</body>
+</html>
+
+</footer>
+</body>
+</html>
