@@ -1,4 +1,4 @@
-
+<script>
     // Dark Mode Toggle
     document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('toggle-mode').addEventListener('click', function () {
@@ -27,3 +27,4 @@
             });
         });
     });
+</script>
