@@ -123,5 +123,94 @@
       result.style.backgroundColor = score === total ? '#d4edda' : '#fff3cd';
     }
   </script>
+		<style>
+  .credits-card {
+    margin-top: 20px;
+    padding: 20px 24px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe, #fef9f9);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: #0f172a;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .credits-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  }
+
+  .credits-card h4 {
+    margin: 0 0 12px 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    color: #2563eb;
+    letter-spacing: .5px;
+  }
+
+  .credits-section {
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .credits-section .label {
+    font-weight: 600;
+    color: #334155;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+  }
+
+  .names span {
+    display: inline-block;
+    margin: 4px 10px;
+    padding: 6px 12px;
+    border-radius: 12px;
+    background: #e0f2fe;
+    font-weight: 600;
+    color: #0f172a;
+    transition: background 0.3s;
+  }
+
+  .names span:hover {
+    background: #bae6fd;
+  }
+
+  .guide {
+    font-size: 0.95rem;
+    color: #475569;
+    font-weight: 500;
+  }
+
+  .guide strong {
+    color: #1e293b;
+    font-weight: 700;
+  }
+</style>
+
+<!-- Place this directly after your </table> -->
+<div class="credits-card">
+  <h4>Project Credits</h4>
+
+  <div class="credits-section">
+    <span class="label">By</span>
+    <div class="names">
+      <span><b>Prathikshna S</b></span>
+      <span>Sahahna R</span>
+      <span>Renuga R</span>
+    </div>
+  </div>
+
+  <div class="credits-section">
+    <span class="label">Guided by</span>
+    <div class="guide">
+      <strong>Mythili A.</strong>, Assistant Professor, Science and Humanities
+    </div>
+  </div>
+</div>
 </body>
 </html>
+
